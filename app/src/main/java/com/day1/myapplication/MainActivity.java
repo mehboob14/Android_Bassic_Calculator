@@ -193,7 +193,7 @@ public class MainActivity extends ComponentActivity {
                     square = true;
                     value1 = Double.parseDouble(editText.getText().toString());
                    // editText.setText("");
-                        editText.setText(String.valueOf(Math.sqrt(value1)));
+                        editText.setText("="+String.valueOf(Math.sqrt(value1)));
                 }
             }
         });
@@ -203,7 +203,27 @@ public class MainActivity extends ComponentActivity {
                 if(!editText.getText().toString().isEmpty()) {
                     loge = true;
                     value1 = Double.parseDouble(editText.getText().toString());
-                    editText.setText("");
+                    editText.setText("="+String.valueOf(Math.log(value1)));
+                }
+            }
+        });
+        tan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!editText.getText().toString().isEmpty()){
+                    tangent = true;
+                    value1 = Double.parseDouble(editText.getText().toString());
+                    editText.setText("="+String.valueOf(Math.tan(value1)));
+                }
+            }
+        });
+        cos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!editText.getText().toString().isEmpty()){
+                    coss = true;
+                    value1 = Double.parseDouble(editText.getText().toString());
+                    editText.setText("="+String.valueOf(Math.cos(value1)));
                 }
             }
         });
@@ -214,26 +234,26 @@ public class MainActivity extends ComponentActivity {
                 if (!editText.getText().toString().isEmpty()) {
                     value2 = Double.parseDouble(editText.getText().toString());
                     if (sum) {
-                        editText.setText(String.valueOf(value1 + value2));
+                        editText.setText("="+String.valueOf(value1 + value2));
                         sum = false;
                     } else if (subtract) {
-                        editText.setText(String.valueOf(value1 - value2));
+                        editText.setText("="+String.valueOf(value1 - value2));
                         subtract = false;
                     } else if (multiply) {
-                        editText.setText(String.valueOf(value1 * value2));
+                        editText.setText("="+String.valueOf(value1 * value2));
                         multiply = false;
                     } else if (division) {
                         if (value2 != 0) {
-                            editText.setText(String.valueOf(value1 / value2));
+                            editText.setText("="+String.valueOf(value1 / value2));
                         } else {
                             Toast.makeText(MainActivity.this, "Canot divide by zero", Toast.LENGTH_SHORT).show();
                         }
                         division = false;
                     }
                     else if(power) {
-                        editText.setText(String.valueOf(Math.pow(value1,value2)));
+                        editText.setText("="+String.valueOf(Math.pow(value1,value2)));
                     }  else if (loge){
-                        editText.setText(String.valueOf(Math.log(value1)));
+                        editText.setText("="+String.valueOf(Math.log(value1)));
                     }
                 } else {
                     Toast.makeText(MainActivity.this, "Bad Expresion", Toast.LENGTH_SHORT).show();

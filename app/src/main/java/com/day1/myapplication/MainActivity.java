@@ -130,7 +130,7 @@ public class MainActivity extends ComponentActivity {
                     editText.setText("");
                 } else
                 {
-                    Toast.makeText(MainActivity.this, "Please enter a number", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Invalid Expresion", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -142,7 +142,12 @@ public class MainActivity extends ComponentActivity {
                     subtract = true;
                     value1 = Double.parseDouble(editText.getText().toString());
                     editText.setText("");
-                } else {
+                    
+                } else if{
+                     subtract = true;
+                     editText.setText(editText.getText().toString() + "-");
+                }
+                else {
                     Toast.makeText(MainActivity.this, "Please enter a number", Toast.LENGTH_SHORT).show();
                 }
             }

@@ -21,7 +21,7 @@ public class MainActivity extends ComponentActivity {
     boolean sum, subtract, multiply, division,power,tangent,coss,square,loge;
     double value1, value2;
 
-    @SuppressLint("SetTextI18n")
+   
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
